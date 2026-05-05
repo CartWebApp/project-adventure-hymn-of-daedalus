@@ -1,33 +1,81 @@
 body {
     background-image: url("andromeda-pixilart.png");
     background-size: 1000px;
+    color: white;
+    position: initial;
+    height: 1000px;
 }
 
 h1 {
-    color: white;
-    transform: translateX(1000px);
+    text-align: center;
     font-size: 40px;
 }
 
-#main-box {
+.blu {
+    transform: translate(148px, -835px);
+}
+
+.gta6 {
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-900px);
+    position: sticky;
+}
+
+#textbox {
+    font-family: "Jersey 10", sans-serif;
     display: flex;
     justify-self: center;
+    height: 200px;
+    width: 800px;
+    background-repeat: no-repeat;
+    background-image: url(Text.png);
+}
+
+#box {
     border: white;
     border-width: 5px;
     height: 750px;
     width: 1250px;
     background-color: black;
+    display: flex;
+    justify-self: center;
+    
 }
 
 .boxes {
     height: 750px;
-    transform: translate(1750px, -650px);
+    
 }
 
-#qte1, #qte2, #qte3 {
-    position: fixed;
-    background-size: 150px;
-    height: 150px;
-    width: 150px;
-    visibility: hidden;
+#Inventory {
+    transform: translateX(-100px);
+}
+
+#Aura {
+    rotate: 270deg;
+    height: 35px;
+    width: 500px;
+    transform: translate(-310px, -55px);
+}
+
+progress[value] {
+appearance: none;
+display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+progress::-webkit-progress-bar {
+  background-color: white;
+  border-radius: 100px;
+}
+
+progress::-webkit-progress-value {
+  background-color: rgb(41, 104, 240);
+  border-radius: 100px;
+}
+
+#choices {
+    transform: translateX(-310px);
 }
