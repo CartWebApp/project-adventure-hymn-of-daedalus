@@ -8,29 +8,33 @@
 </head>
 <body>
 
-        <!--Ostory object will send text here-->
-        
-
-        
+        <!--Ostory object will send text here-->        
         <div id="box"></div>
-        <div id="textbox"><section id="story"></section>
-        <section id="choices"></section></div>
+        <div id="textbox">
+            <p id="peep"></p>
+            <section id="story"></section>
+
+            <section id="choices">
+                <div id="option1"></div>
+                <div id="option2"></div>
+            </section>
+        </div>
 
 
     <img class="blu" src="blu.gif">
         <section class="gta6">
             <progress id="Aura" value="50" max="100" value="10"></progress>      
-            <div id="Inventory"><img src="invent.png" class="boxes"></div>
+            <div id="Inventory"><img src="invent.png" class="boxes">
+                <section class="Inventory"></section>
+                <section class="Inventory"></section>
+                <section class="Inventory"></section>
+                <section class="Inventory"></section>
+                <section class="Inventory"></section>
+            </div>
         </section>
-
-    <section>
-            <section class="Inventory"></section>
-            <section class="Inventory"></section>
-            <section class="Inventory"></section>
-            <section class="Inventory"></section>
-            <section class="Inventory"></section>
-    </section>
     
+
+
 </body>
 
 
@@ -288,20 +292,21 @@ function startStory() {
 
 
 function renderStory() {
-    //cureent scene of the story array
+    //current scene of the story array
     let currentScene = myStory[myStory.length - 1];
     // Empty the story and choices
     storyCont.innerHTML = "";
     choiceCont.innerHTML = "";
 
 //This builds the story into the story array
- for (let scene of myStory) {
-        let storyText = document.createElement("p");
-        storyText.innerText = story[scene].text;
+ for (let Currentscene of myStory) {
+        let storyText = document.getElementById("peep");
+        storyText.innerText = story[currentScene];
         storyCont.appendChild(storyText);
     }
     //Builds the buttons for the current scene the user on
-    buildChoices(story[currentScene]);
+    document.getElementById("option1").innerHTML = myStory[0];
+    document.getElementById("option2").innerHTML = myStory[1];
 }
 renderStory();
 
