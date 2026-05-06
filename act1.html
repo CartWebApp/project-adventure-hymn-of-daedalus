@@ -12,7 +12,10 @@
         <div id="box"></div>
         <div id="textbox">
             <p id="peep"></p>
-            <section id="story"></section>
+        <section id="story"></section>
+</div>
+
+        <div id="clickity"></div>
 
             <section id="choices">
                 <div id="option1"></div>
@@ -40,11 +43,15 @@
 
 <script>
 
-const storyCont = document.getElementById("story")
-const choiceCont = document.getElementById("choices")
-const startOptions = ["spider","shore","village"]
-const myStory = ['introStory']
+const storyCont = document.getElementById("peep");
+const choiceCont = document.getElementById("choices");
+const startOptions = ["spider","shore","village"];
+const myStory = ['introStory'];
 const story = {
+        introStory : {
+            text : "* ...", 
+            choices : [] // empty to invoke special logic 
+        },
         //Beginnings
         spider : {
             bgSource: "path/to/image.jpg",
@@ -253,13 +260,11 @@ const story = {
         good : {
             text : "You decided to end her life, to get the revenge you always wanted. You raise your sword and prepare to cut her down. You look at your younger sister who you used to have a great close bond with. The thought of killing your sister overwhelms you and you drop the sword. Your sister immediately tries to retaliate, however is overwhelmed by your brute strength. You detain her and she is placed under arrest for her crimes. You reveal yourself to the public, explaining the evil deeds that your sister has done and how she is now detained. The public, happy that your sisters tyranny is over, praises you and applauds you and welcomes you back. You slowly get adjusted with your royalty status and your relatives and royal guards are proud of the decision you made. They lead you to the statue of your mother and father, the statues seem to glow without reason. Confused, you brush it off to be the sunlight shining upon the statues. After years of getting adjusted and your sister spending her remaining years in prison. You are now a family of four, as you had an arranged marriage with a princess from another kingdom in the sky. You had one son and one daughter. One day, your daughter goes missing, however she was quickly found as your younger sister had alerted the guards. The mastermind was a criminal that was sought out for years, ever since your father was king. Your sister explains how she was brainwashed and abused by this mastermind. Not wanting your daughter to go through what she did, she alerted the guards once she heard a sneaking intruder. After this incident, you live on to be one of the greatest kings to ever rule the kingdom.\n\n\n\nGood Ending 3/3",
         },
-}
+};
 
-// THANK YOU FAST FOR HELPING ME ON THIS PART!!!!! - Dillan
 function buildChoices(storyObject){
     if (storyObject.choices.length === 0) { //if the choices array is empty
-        let newBtn = document.createElement('button');
-            newBtn.innerText = "Begin the Adventure";
+        let newBtn = document.getElementById('clickity');
             newBtn.addEventListener('click', () => {
                 startStory();
             })
@@ -267,7 +272,7 @@ function buildChoices(storyObject){
     } else { //assume there are choices to make
         for(let choice of storyObject.choices){
             let newBtn = document.createElement('button');
-            newBtn.innerText = choice[0]; // show the text in index 0
+            newBtn.textContent = choice[0]; // show the text in index 0
             newBtn.addEventListener('click', () => {
                 myStory.push(choice[1]) // push the story key ine index 1
                 console.log('Story Array', myStory); // log story array
@@ -290,23 +295,22 @@ function startStory() {
 
 
 
-
 function renderStory() {
     //current scene of the story array
     let currentScene = myStory[myStory.length - 1];
+
     // Empty the story and choices
     storyCont.innerHTML = "";
     choiceCont.innerHTML = "";
 
-//This builds the story into the story array
- for (let Currentscene of myStory) {
+    //This builds the story into the story array
+    for (let Currentscene of myStory) {
         let storyText = document.getElementById("peep");
-        storyText.innerText = story[currentScene];
+        storyText = story.find(currentScene);
+        alert(storyText);
         storyCont.appendChild(storyText);
     }
-    //Builds the buttons for the current scene the user on
-    document.getElementById("option1").innerHTML = myStory[0];
-    document.getElementById("option2").innerHTML = myStory[1];
+    buildChoices(story[currentScene]);
 }
 renderStory();
 
