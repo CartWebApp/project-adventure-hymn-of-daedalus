@@ -24,6 +24,10 @@ h1 {
 
 #peep {
     font-family: "Jersey 10", sans-serif;
+    font-size: large;
+    position: absolute;
+    width: 780px;
+    transform: translateX(10px);
 }
 
 #textbox {
@@ -39,7 +43,9 @@ h1 {
     height: 20px;
     width: 40px;
     background-color: aqua;
-    transform: translate(1315px, -35px);
+    transform: translate(-96px, 165px);
+    position: relative;
+    visibility: visible;
 }
 
 #box {
@@ -87,5 +93,23 @@ progress::-webkit-progress-value {
 }
 
 #choices {
-    transform: translateX(-310px);
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
+
+#option1 {
+    background-image: url(option.png);
+    height: 170px;
+    width: 400px;
+    background-size: 400px;
+    transform: translateY(-170px);
+}
+
+#option2 {
+    background-image: url(option.png);
+    height: 170px;
+    width: 400px;
+    background-size: 400px;
+    transform: translateY(-170px);
 }

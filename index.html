@@ -44,14 +44,7 @@ introStory : {
 
 // THANK YOU FAST FOR HELPING ME ON THIS PART!!!!! - Dillan
 function buildChoices(storyObject){
-    if (storyObject.choices.length === 0) { //if the choices array is empty
-        let newBtn = document.createElement('button');
-            newBtn.innerText = "Begin the Adventure";
-            newBtn.addEventListener('click', () => {
-                startStory();
-            })
-        choiceCont.appendChild(newBtn);
-    } else { //assume there are choices to make
+    if (storyObject.choices.length !== 0) { //if the choices array is empty
         for(let choice of storyObject.choices){
             let newBtn = document.createElement('button');
             newBtn.innerText = choice[0]; // show the text in index 0
@@ -64,6 +57,13 @@ function buildChoices(storyObject){
             })
             choiceCont.appendChild(newBtn);
         }
+    } else { //assume there are choices to make
+        let newBtn = document.createElement('button');
+            newBtn.innerText = "Begin the Adventure";
+            newBtn.addEventListener('click', () => {
+                startStory();
+            })
+        choiceCont.appendChild(newBtn);
     }
 }
 
