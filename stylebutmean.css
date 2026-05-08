@@ -43,16 +43,19 @@ body {
 #collapse {
     height: 400px;
     width: 400px;
-    animation: doda 1s ease-out 0s 1 forwards;
 }
 
 @keyframes doda {
     from {
         transform: translateX(0px);
     }
+
+    25% {
+        transform: translateX(-200px);
+    }
    
     50% {
-        transform: translateX(-300px);
+        transform: translateX(-800px);
     }
 
     to {
@@ -93,4 +96,33 @@ body {
     background-image: url(option.png);
     background-size: 400px 200px;
     background-repeat: no-repeat;
+}
+
+#Aura {
+    rotate: 270deg;
+    height: 35px;
+    width: 500px;
+    transform: translate(-310px, -55px);
+}
+
+progress[value] {
+appearance: none;
+display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+progress::-webkit-progress-bar {
+  background-color: white;
+  border-radius: 100px;
+}
+
+progress::-webkit-progress-value {
+  background-color: rgb(41, 104, 240);
+  border-radius: 100px;
+}
+
+.blu {
+    height: 50px;
+    width: 200px;
 }
