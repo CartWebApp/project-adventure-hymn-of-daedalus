@@ -263,66 +263,31 @@ const story = {
         },
 };
 
+let currentScene = myStory[myStory.length - 1];
+
 function buildChoices(storyObject){
     const opt1 = document.getElementById("option1");
     const opt2 = document.getElementById("option2");
         let newBtn = document.getElementById('clickity');
-    if (storyObject.choices || storyObject.choices.length !== 0) { //assume there are choices to make
-            newBtn.addEventListener("click", () => {
-        opt1.textContent = storyObject.choices[0][0];
-
-        opt1.onclick = () => {
-
-            const next = storyObject.choices[0][1];
-
-            myStory.push(next);
-            renderStory();
-            }
-        });
-
-    // CHOICE 2
-    if (storyObject.choices[1]) {
-
-        opt2.textContent = storyObject.choices[1][0];
-
-        opt2.onclick = () => {
-
-            const next = storyObject.choices[1][1];
-
-            myStory.push(next);
-            renderStory();
-        }
-    }
-    } else {
+    if (currentScene == "introStory") {
             newBtn.addEventListener('click', () => {
                 startStory();
             });
-    if (storyObject.choices.length !== 0) { //if the choices array is empty
-        let newBtn = document.getElementById('clickity');
-        for(let choice of storyObject.choices){
-            let choice1 = document.getElementById('option1');
-            let choice2 = document.getElementById('option2');
-            choice1.textContent = choice[0]; // show the text in index 0
-            choice2.textContent = choice[1];
-            newBtn.addEventListener('click', () => {
-                myStory.push(choice[1]) // push the story key ine index 1
-                renderStory();
-//----------------> call story render function here
 
-            })
-            choiceCont.appendChild(newBtn);
-        }
-    } else { //assume there are choices to make
-        let newBtn = document.getElementById('clickity');
-            newBtn.addEventListener('click', () => {
-                startStory();
-            })
-        choiceCont.appendChild(newBtn);
+    } else {
+        opt1.textContent = story.choices[0];
+        opt2.textContent = story.choices[1];
+        newBtn.addEventListener('click', () => {
+                renderStory();
+            });
+            
     }
+    myStory.appendChild(currentScene);
 }
 
 function startStory() {
     myStory.push(startOptions[Math.floor(Math.random() * startOptions.length)]); //randomize starter beginning
+    myStory.push()
     renderStory();
     //call render story function here
 }
@@ -330,9 +295,11 @@ function startStory() {
 
 function renderStory() {
     //current scene of the story array
-    let currentScene = myStory[myStory.length - 1];
-
+    let place = story[currentScene];
+    console.log(place);
     //This builds the story into the story array
+    storyCont.innerText = place.text;
+    buildChoices(place);
 }
 renderStory();
 

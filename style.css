@@ -95,7 +95,6 @@ progress::-webkit-progress-value {
 #choices {
     display: flex;
     justify-content: center;
-    visibility: hidden;
 }
 
 #option1 {
