@@ -266,31 +266,22 @@ const story = {
 function buildChoices(storyObject){
     const opt1 = document.getElementById("option1");
     const opt2 = document.getElementById("option2");
-    const newBtn = document.getElementById("clickity");
-    if (!storyObject.choices || storyObject.choices.length === 0) { //if the choices array is empty
-            newBtn.addEventListener('click', () => {
-                 if (storyObject.choices[0]) {
-
+        let newBtn = document.getElementById('clickity');
+    if (storyObject.choices || storyObject.choices.length !== 0) { //assume there are choices to make
+            newBtn.addEventListener("click", () => {
         opt1.textContent = storyObject.choices[0][0];
 
         opt1.onclick = () => {
 
             const next = storyObject.choices[0][1];
 
-            if (next === "START") {
-                startStory();
-                return;
-            }
-
             myStory.push(next);
             renderStory();
-        };
-    }
+            }
+        });
 
     // CHOICE 2
     if (storyObject.choices[1]) {
-
-        opt2.style.display = "block";
 
         opt2.textContent = storyObject.choices[1][0];
 
@@ -300,26 +291,13 @@ function buildChoices(storyObject){
 
             myStory.push(next);
             renderStory();
-        };
+        }
     }
-            })
+    } else {
+            newBtn.addEventListener('click', () => {
+                startStory();
+            });
         choiceCont.appendChild(newBtn);
-    } else { //assume there are choices to make
-
-            const [choice1, choice2] = storyObject.choices;
-            opt1.textContent = choice1[0];
-            opt2.textContent = choice2[0];
-
-        opt1.onclick = () => {
-            myStory.push(choice1[1]);
-            renderStory();
-        };
-
-        opt2.onclick = () => {
-            myStory.push(choice2[1]);
-            renderStory();
-        };
-        
     }
 }
 

@@ -43,6 +43,21 @@ body {
 #collapse {
     height: 400px;
     width: 400px;
+    animation: doda 1s ease-out 0s 1 forwards;
+}
+
+@keyframes doda {
+    from {
+        transform: translateX(0px);
+    }
+   
+    50% {
+        transform: translateX(-300px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
 }
 
 .att {
