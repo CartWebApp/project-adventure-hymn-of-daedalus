@@ -297,6 +297,26 @@ function buildChoices(storyObject){
             newBtn.addEventListener('click', () => {
                 startStory();
             });
+    if (storyObject.choices.length !== 0) { //if the choices array is empty
+        let newBtn = document.getElementById('clickity');
+        for(let choice of storyObject.choices){
+            let choice1 = document.getElementById('option1');
+            let choice2 = document.getElementById('option2');
+            choice1.textContent = choice[0]; // show the text in index 0
+            choice2.textContent = choice[1];
+            newBtn.addEventListener('click', () => {
+                myStory.push(choice[1]) // push the story key ine index 1
+                renderStory();
+//----------------> call story render function here
+
+            })
+            choiceCont.appendChild(newBtn);
+        }
+    } else { //assume there are choices to make
+        let newBtn = document.getElementById('clickity');
+            newBtn.addEventListener('click', () => {
+                startStory();
+            })
         choiceCont.appendChild(newBtn);
     }
 }
@@ -311,11 +331,8 @@ function startStory() {
 function renderStory() {
     //current scene of the story array
     let currentScene = myStory[myStory.length - 1];
-    let place = story[currentScene];
 
     //This builds the story into the story array
-    storyCont.innerText = place.text;
-    buildChoices(place);
 }
 renderStory();
 

@@ -45,6 +45,7 @@ h1 {
     background-color: aqua;
     transform: translate(-96px, 165px);
     position: relative;
+    visibility: visible;
 }
 
 #box {
@@ -94,6 +95,7 @@ progress::-webkit-progress-value {
 #choices {
     display: flex;
     justify-content: center;
+    visibility: hidden;
 }
 
 #option1 {
