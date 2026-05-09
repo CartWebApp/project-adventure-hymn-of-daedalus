@@ -51,8 +51,9 @@ const story = {
          wrig: {
             text : "You decide to wriggle out, however you werent able to. After constant wriggling the web loosens and you make it out of the web. You catch your fall and decide to escape so you enter a nearby cave entrance in the spider's den. The cave is too small for the spider to pursue. You wander in the darkness, limping while hugging hard cold walls of the cave. You suddenly feel something small brush past your leg. Shaken up at first, you halt trying to detect the unknown creature. However, you hear its pitter patter footsteps running the same direction as you were going. Relived, you follow it until eventually you make it out of the cave. You exit the cave and the unknown creature was actually small and fuzzy. You thank the unknown creature for its support and continue on your way. You eventually find yourself near a water source and decide to drink some. While near the water you clean your injuries and patch them with loose leaves. You then think about what you should do to enact revenge upon your corrupt sister. Before you try to even think about revenge, you decide to discover the unknown world.",
             choices : [
-                ["Begin Act 2", "midStory"]
-            ]
+                ["Begin Act 2", "act2.html"]
+            ],
+            target: "act2.html"
          },
           look: {
             text : "You look at your surroundings and you find a nearby rusty hand axe and a frail looking sword.",
@@ -65,14 +66,15 @@ const story = {
          axe: {
             text : "You grab the axe and cut the web, you drop the axe trying to catch your fall, the axe falls on the ground but it is still in good condition. You feel the need to escape so you enter a nearby cave entrance in the spider's den, the cave is too small for the spider to pursue. You wander the darkness, not knowing where you are going, suddenly you feel a small creature brush past your leg, shaken up at first, you halt trying to detect the unknown creature. However, you hear its pitter patter footsteps running the same direction as you were going. Relived, you follow it until eventually you make it out of the cave. You exit the cave and the unknown creature was actually small and fuzzy. You thank the unknown creature for its support and continue on your way. You eventually find yourself near a water source and decide to drink some. While near the water you clean your injuries and patch them with loose leaves. You then think about what you should do to enact revenge upon your corrupt sister. Before you try to even think about revenge, you decide to discover the unknown world.",
             choices : [
-                ["Begin Act 2", "midStory"]
-            ]
+                ["Begin Act 2", "act2.html"]
+            ],
+            target: "act2.html"
         },
          sword: {
             text : "You grab the sword and cut the web, you drop the sword trying to catch your fall, the sword falls on the ground and shatters on impact. You decide to abandon it and escape so you enter a nearby cave entrance in the spider's den, the cave is too small for the spider to pursue. You wander the darkness, not knowing where you are going, suddenly you feel a small creature brush past your leg, shaken up at first, you halt trying to detect the unknown creature. However, you hear its pitter patter footsteps running the same direction as you were going. Relived, you follow it until eventually you make it out of the cave. You exit the cave and the unknown creature was actually small and fuzzy. You thank the unknown creature for its support and continue on your way. You then think about what you should do to enact revenge upon your corrupt sister. Before you try to even think about revenge, you decide to discover the unknown world.",
             choices : [
-                ["Begin Act 2", "midStory"]
-            ]         
+                ["Begin Act 2", "act2.html"]
+            ],        
         },
          none: {
             text : "You decide to not grab any of the weapons and try to claw at the hard webbing. You break a piece of the web, however that causes you to drop and spin into more web leaving you stuck. Unable to get out, you succumb to your injuries and die.",  
@@ -104,8 +106,8 @@ const story = {
         noInteraction : {
             text : "You head into the forest , deciding that interacting with “people” is not worth it. Thirsty and hungry, you seek to find a water source. You hear the rush of water and go straight towards it. After finding the water source and taking a drink, you clean your wounds and wrap it with the leaves around you. You then think about what you should do to enact revenge upon your corrupt sister. However, before you try to even think about revenge, you decide to discover the unknown world.",
             choices : [
-                ["Begin Act 2", "midStory"]
-            ]       
+                ["Begin Act 2", "act2.html"]
+            ],      
         },
         interaction : {
             text : "You decide to enter the village and try to seek help from the “people”. As you enter the village, many look at you with curiosity and awe. As you limp, covered in blood, a traveler helps you and takes you to the local doctor. They help you stitch your wounds and give you some food to eat. All types of communication do not work due to the language barrier between each other. Although there is a language barrier, you still want to say thanks to “people” that helped you. How will you thank them?",
@@ -118,26 +120,26 @@ const story = {
         nice : {
             text : "You thank them for their kindness even though there is a language barrier. They do not understand what you were saying but they knew it was meant with good intentions. WIth that, they also give you a comically large spoon as a gift to help you on your way, you thank them and decide it's time to take revenge on your sister. You leave and start your long journey.",
             choices : [
-                ["Begin Act 2", "midStory"]
-            ]       
+                ["Begin Act 2", "act2.html"]
+            ],      
         },
         rude : {
             text : "You dismiss their kindness and demand more from them. They do not understand what you have said, however they do understand that you do not have good intentions. The mole villagers start making an ear piercing noise and rush towards you…",
             choices : [
-                ["Begin Act 2", "midStory"]
-            ]        
+                ["Begin Act 2", "act2.html"]
+            ],       
         },
         mysterious : {
             text : "You stay silent and they stare in confusion. You start to exit the hut but although confused, they give you a comically large spoon as a gift to help you on your way. You stare at them with no emotion, grab the spoon and leave. As you think about how to take revenge on your sister, the people just stare in confusion on what just happened.",
             choices : [
-                ["Begin Act 2", "midStory"]
-            ]        
+                ["Begin Act 2", "act2.html"]
+            ],       
         },
         nothing : {
             text : "You decided that it was best to do nothing. You did nothing to patch your wounds, find food or water, or do anything of that matter. You just decided to do absolutely nothing. Since you did nothing, you slowly succumbed to the injuries and died.",
             choices : [
-                ["Begin Act 2", "midStory"]
-            ]        
+                ["Begin Act 2", "act2.html"]
+            ],       
         },
         shore : {
             bgSource: "path/to/image.jpg",
@@ -154,8 +156,8 @@ const story = {
         intoforestTwo : {
             text : "You head into the forest thinking that's the most logical thing to do. With thirst and hunger on your mind, you seek the forest for a water source. You hear the rush of water and go straight towards it. After finding the water source and taking a drink, you clean your wounds and wrap it with the leaves around you. You then think about what you should do to enact revenge upon your corrupt sister. Before you try to even think about revenge, you decide to discover the unknown world.",
             choices : [
-                ["Begin Act 2", "midStory"]
-            ]        
+                ["Begin Act 2", "act2.html"]
+            ],       
         },
         swimWater : {
             text : "You decided swimming was your best option. You head to the water and start swimming along the shore. However, the blood from the injuries attracted sharks and they were hungry for food.",
@@ -173,7 +175,6 @@ const story = {
             choices : [
                 ["Fight...", "afterGrave"],
             ],
-            target: "Battle1.html"
         },
         afterGrave : {
             text :"The once possessed pillar disappears and the pieces fall to the ground. With the bounty defeated, you take a piece of the broken pillar as proof. Also the other pillars were illusions and they fade away as the possessed pillar is defeated. You head back to the village and the hut next to the board awards you with 10 gold coins. With money taken care of, you still need more experience before you feel comfortable enough to defeat your sister. You also slowly feel your wings grow stronger though you are not sure. Without wondering more, you decided to take on another quest.",
@@ -249,9 +250,7 @@ const story = {
             text : "You decided to end her life, to get the revenge you always wanted. You raise your sword and prepare to cut her down. You look at your younger sister who you used to have a great close bond with. The thought of killing your sister overwhelms you and you drop the sword. Your sister immediately tries to retaliate, however is overwhelmed by your brute strength. You detain her and she is placed under arrest for her crimes. You reveal yourself to the public, explaining the evil deeds that your sister has done and how she is now detained. The public, happy that your sisters tyranny is over, praises you and applauds you and welcomes you back. You slowly get adjusted with your royalty status and your relatives and royal guards are proud of the decision you made. They lead you to the statue of your mother and father, the statues seem to glow without reason. Confused, you brush it off to be the sunlight shining upon the statues. After years of getting adjusted and your sister spending her remaining years in prison. You are now a family of four, as you had an arranged marriage with a princess from another kingdom in the sky. You had one son and one daughter. One day, your daughter goes missing, however she was quickly found as your younger sister had alerted the guards. The mastermind was a criminal that was sought out for years, ever since your father was king. Your sister explains how she was brainwashed and abused by this mastermind. Not wanting your daughter to go through what she did, she alerted the guards once she heard a sneaking intruder. After this incident, you live on to be one of the greatest kings to ever rule the kingdom.\n\n\n\nGood Ending 3/3",
         },
 }
-if (story.target == "Battle1.html") {
-    
-}
+
 
 // THANK YOU FAST FOR HELPING ME ON THIS PART!!!!! - Dillan
 function buildChoices(storyObject){
@@ -267,17 +266,18 @@ function buildChoices(storyObject){
             let newBtn = document.createElement('button');
             console.log(story.target);
             newBtn.innerText = choice[0]; // show the text in index 0
-            if (newBtn.innerText == "Fight...") {
+
             newBtn.addEventListener('click', () => {
-                window.location.href = "Battle1.html";
-                return;
-            })
-        }
-            newBtn.addEventListener('click', () => {
+            if (choice[1].includes(".html")) {
+                window.location.href = choice[1];
+            } else {
                 myStory.push(choice[1]) // push the story key ine index 1
                 console.log('Story Array', myStory); // log story array
                 renderStory();
 //----------------> call story render function here
+            }
+                
+               
 
             })
             choiceCont.appendChild(newBtn);
