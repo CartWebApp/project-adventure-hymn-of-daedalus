@@ -39,7 +39,7 @@ function quick1() {
         document.getElementById("h2").style.visibility = `hidden`;
         } else if (health == 0) {
         document.getElementById("h1").style.visibility = `hidden`;
-        window.location.href = "act2.html";
+        window.location.href = "afterTemp.html";
         }
 
         return;
@@ -84,7 +84,7 @@ function quick2() {
         document.getElementById("h2").style.visibility = `hidden`;
         } else if (health == 0) {
         document.getElementById("h1").style.visibility = `hidden`;
-        window.location.href = "act2.html";
+        window.location.href = "afterGrave.html";
         }
 
         return;
@@ -137,7 +137,7 @@ function quick3() {
         return;
         } else if (health == 0) {
         document.getElementById("h1").style.visibility = `hidden`;
-        window.location.href = "act2.html";
+        window.location.href = "afterBar.html";
         return;
         }
 
