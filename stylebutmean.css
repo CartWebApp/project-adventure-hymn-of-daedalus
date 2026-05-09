@@ -22,6 +22,18 @@ body {
     justify-content: center;
 }
 
+.heart {
+    height: 70px;
+    width: 70px;
+}
+
+.ubars {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    transform: translateY(-400px);
+}
+
 #textbox {
     font-family: "Jersey 10", sans-serif;
     display: flex;
@@ -120,9 +132,4 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
   background-color: rgb(41, 104, 240);
   border-radius: 100px;
-}
-
-.blu {
-    height: 50px;
-    width: 200px;
 }

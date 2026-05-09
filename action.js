@@ -46,17 +46,9 @@ function quick1() {
     }
 }, { once: true }); 
 
-    setTimeout(() => {
+setTimeout(() => {
         document.getElementById("qte1").style.visibility = "hidden";
         document.getElementById("qte1").style.backgroundImage = ``;
-        document.getElementById("collapse").src = `collatt.gif`;
-        setTimeout(() => {
-            document.getElementById("collapse").style.animation = `doda .75s ease-out 0s 1 forwards`;
-            document.getElementById("soar").style.opacity = `.33px`;
-            setTimeout(() => {
-                document.getElementById("collapse").style.animation = ``;
-        }, 900);
-        }, 900);
     }, 900);
 };
 
@@ -102,13 +94,6 @@ function quick2() {
     setTimeout(() => {
         document.getElementById("qte2").style.visibility = "hidden";
         document.getElementById("qte2").style.backgroundImage = ``;
-        setTimeout(() => {
-            document.getElementById("collapse").style.animation = `doda .75s ease-out 0s 1 forwards`;
-            document.getElementById("soar").style.opacity = `.33px`;
-            setTimeout(() => {
-                    document.getElementById("collapse").style.animation = ``;
-            }, 900);
-        }, 900);
     }, 900);
 };
 
@@ -162,13 +147,6 @@ function quick3() {
     setTimeout(() => {
         document.getElementById("qte3").style.visibility = "hidden";
         document.getElementById("qte3").style.backgroundImage = ``;
-        setTimeout(() => {
-            document.getElementById("collapse").style.animation = `doda .75s ease-out 0s 1 forwards`;
-            document.getElementById("soar").style.opacity = `.33px`;
-            setTimeout(() => {
-                document.getElementById("collapse").style.animation = ``;
-        }, 900);
-        }, 900);
     }, 900);
 };
 
@@ -180,15 +158,70 @@ function wait() {
     }, 2500);
 }
 
+
+let aura = 50;
+let tro = aura + "";
+
+
 function quickattack() {
-    one = quick1();
-    two = quick2();
-    three = quick3();
-    waits = wait();
+    quick1();
+    quick2();
+    quick3();
+    wait();
+
+    
+    setTimeout(() => {
+        document.getElementById("collapse").src = `collatt.gif`;
+
+        setTimeout(() => {
+            document.getElementById("collapse").style.animation = `doda .75s ease-out 0s 1 forwards`;
+            setTimeout(() => {
+                document.getElementById("collapse").style.animation = ``;
+                aura = aura + 25;
+            let tro = aura + "";
+            document.getElementById("Aura").value = tro;
+                if (document.getElementById("1h").style.visibility == `hidden`) {
+                    if (document.getElementById("2h").style.visibility == `hidden`) {
+                        
+                    }
+                    document.getElementById("2h").style.visibility = `hidden`;
+                }  else {
+                   document.getElementById("1h").style.visibility = `hidden`; 
+                }
+        }, 900);
+        }, 900);
+    }, 900);
 }
 
+
+function defending() {
+    
+     if (document.getElementById("2h").style.visibility == `hidden`) {
+                    if (document.getElementById("1h").style.visibility == `hidden`) {
+                        document.getElementById("1h").style.visibility = `visible`;
+                    }
+                    document.getElementById("2h").style.visibility = `visible`;
+                }  else {
+                   document.getElementById("1h").style.visibility = `visible`; 
+                }
+    wait();
+
+    setTimeout(() => {
+        document.getElementById("collapse").src = `collatt.gif`;
+        setTimeout(() => {
+            document.getElementById("collapse").style.animation = `doda .75s ease-out 0s 1 forwards`;
+            document.getElementById("soar").style.opacity = `.33px`;
+            setTimeout(() => {
+                document.getElementById("collapse").style.animation = ``;
+        }, 900);
+        }, 900);
+    }, 100);
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 document.getElementById("option1").addEventListener("click", goneagainO);
 document.getElementById("option1").addEventListener("click", quickattack);
+
+document.getElementById("option2").addEventListener("click", goneagainO);
+document.getElementById("option2").addEventListener("click", defending);
