@@ -39,7 +39,7 @@ function quick1() {
         document.getElementById("h2").style.visibility = `hidden`;
         } else if (health == 0) {
         document.getElementById("h1").style.visibility = `hidden`;
-        window.location.href = "act1.html";
+        window.location.href = "act2.html";
         }
 
         return;
@@ -84,7 +84,7 @@ function quick2() {
         document.getElementById("h2").style.visibility = `hidden`;
         } else if (health == 0) {
         document.getElementById("h1").style.visibility = `hidden`;
-        window.location.href = "act1.html";
+        window.location.href = "act2.html";
         }
 
         return;
@@ -137,7 +137,7 @@ function quick3() {
         return;
         } else if (health == 0) {
         document.getElementById("h1").style.visibility = `hidden`;
-        window.location.href = "act1.html";
+        window.location.href = "act2.html";
         return;
         }
 
@@ -182,12 +182,18 @@ function quickattack() {
             document.getElementById("Aura").value = tro;
                 if (document.getElementById("1h").style.visibility == `hidden`) {
                     if (document.getElementById("2h").style.visibility == `hidden`) {
-                        
+                        if (document.getElementById("3h").style.visibility == 'hidden') {
+
+                        }
+                        document.getElementById("3h").style.visibility = 'hidden';
+                        window.location.href = "over.html"; 
                     }
                     document.getElementById("2h").style.visibility = `hidden`;
+                
                 }  else {
                    document.getElementById("1h").style.visibility = `hidden`; 
-                }
+                    
+                } 
         }, 900);
         }, 900);
     }, 900);
